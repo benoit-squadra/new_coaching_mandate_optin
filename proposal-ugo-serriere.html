@@ -109,11 +109,19 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
 }
 .coach-card.selected .coach-selected-badge{display:flex}
 .coach-avatar{
-  width:56px;height:56px;border-radius:50%;
+  width:64px;height:64px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:20px;font-weight:700;color:#fff;margin-bottom:16px;
-  flex-shrink:0;
+  font-size:22px;font-weight:700;color:#fff;margin-bottom:16px;
+  flex-shrink:0;overflow:hidden;position:relative;
 }
+.coach-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.coaches-limit{
+  background:rgba(0,102,255,0.06);border:1px solid rgba(0,102,255,0.18);
+  border-radius:8px;padding:14px 20px;margin-bottom:24px;
+  font-size:14px;color:var(--dark);line-height:1.6;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.coaches-limit-arrow{color:var(--blue);font-weight:700;margin-top:1px;flex-shrink:0}
 .coach-name{font-size:18px;font-weight:700;margin-bottom:2px}
 .coach-tagline{font-size:12px;color:#888;font-family:var(--mono);letter-spacing:.04em;margin-bottom:16px}
 .coach-linkedin{font-size:12px;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:5px;margin-bottom:20px}
@@ -343,12 +351,16 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
         <h2 class="section-title">Your coaches</h2>
         <div class="section-rule"></div>
       </div>
+      <div class="coaches-limit">
+        <span class="coaches-limit-arrow">→</span>
+        <span>Select <strong>up to 2 coaches</strong> for a free 30-minute discovery call — no commitment at this stage. Squadra will make the introductions within <strong>48 hours</strong> of your submission.</span>
+      </div>
       <div class="coaches-grid">
 
         <!-- Loraine Habib -->
         <div class="coach-card" id="card-loraine" onclick="toggleCoach('loraine')">
           <div class="coach-selected-badge">✓</div>
-          <div class="coach-avatar" style="background:#0066FF">L</div>
+          <div class="coach-avatar" style="background:#0066FF"><img id="photo-loraine" src="" alt="Loraine Habib" onerror="this.style.display='none'"><span>L</span></div>
           <div class="coach-name">Loraine Habib</div>
           <div class="coach-tagline">Leadership coach · Psychology · Tech</div>
           <a class="coach-linkedin" href="https://www.linkedin.com/in/loraine-habib-a1682616/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -370,7 +382,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
         <!-- Chloe Allen -->
         <div class="coach-card" id="card-chloe" onclick="toggleCoach('chloe')">
           <div class="coach-selected-badge">✓</div>
-          <div class="coach-avatar" style="background:#5B4FE8">C</div>
+          <div class="coach-avatar" style="background:#5B4FE8"><img id="photo-chloe" src="" alt="Chloe Allen" onerror="this.style.display='none'"><span>C</span></div>
           <div class="coach-name">Chloe Allen</div>
           <div class="coach-tagline">HR &amp; transformation · 15 years · International</div>
           <a class="coach-linkedin" href="https://www.linkedin.com/in/chloe-allen8653/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -393,7 +405,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
         <!-- Amélie Séguret -->
         <div class="coach-card" id="card-amelie" onclick="toggleCoach('amelie')">
           <div class="coach-selected-badge">✓</div>
-          <div class="coach-avatar" style="background:#D4A853">A</div>
+          <div class="coach-avatar" style="background:#D4A853"><img id="photo-amelie" src="" alt="Amélie Séguret" onerror="this.style.display='none'"><span>A</span></div>
           <div class="coach-name">Amélie Séguret</div>
           <div class="coach-tagline">Operating Partner · BlaBlaCar · Serena VC</div>
           <a class="coach-linkedin" href="https://www.linkedin.com/in/am%C3%A9lie-s%C3%A9guret-17573211/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -416,7 +428,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
         <!-- Pierre Verstraeten -->
         <div class="coach-card" id="card-pierre" onclick="toggleCoach('pierre')">
           <div class="coach-selected-badge">✓</div>
-          <div class="coach-avatar" style="background:#2A9D8F">P</div>
+          <div class="coach-avatar" style="background:#2A9D8F"><img id="photo-pierre" src="" alt="Pierre Verstraeten" onerror="this.style.display='none'"><span>P</span></div>
           <div class="coach-name">Pierre Verstraeten</div>
           <div class="coach-tagline">Executive coach · Former CHRO · Criteo · Spendesk</div>
           <a class="coach-linkedin" href="https://www.linkedin.com/in/pierre-verstraeten-4a25741/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -487,7 +499,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
       <span class="respond-dot"></span>
       Your response
     </div>
-    <p class="respond-sub">Select the coach(es) you'd like a 30-minute discovery call with, accept the terms, and submit. No commitment at this stage — the discovery call is free.</p>
+    <p class="respond-sub">Select up to 2 coaches for a free 30-minute discovery call, accept the terms, and submit. Squadra will make the introductions within 48 hours.</p>
 
     <form name="coaching-proposal" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleProposalSubmit(event)">
       <p style="position:absolute;left:-9999px;" aria-hidden="true"><label>Don't fill this out: <input name="bot-field"></label></p>
@@ -499,7 +511,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
       <div class="form-group">
         <label class="form-label">Discovery call with <span>(select above — up to 2 coaches)</span></label>
         <div class="coach-selection-display" id="selection-display">
-          <span class="selection-empty" id="selection-empty">No coaches selected yet — click a coach card above to select.</span>
+          <span class="selection-empty" id="selection-empty">No coaches selected yet — scroll up and click a card to select up to 2.</span>
           <div class="selection-chips" id="selection-chips" style="display:none"></div>
         </div>
       </div>
@@ -532,7 +544,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--dark);-webkit-f
   <div class="done-inner">
     <div class="done-icon">✓</div>
     <div class="done-title">Thank you, Ugo.</div>
-    <div class="done-msg">Benoit will confirm your discovery call(s) within 24 hours.<br>No commitment at this stage.</div>
+    <div class="done-msg">Squadra will make the introductions within 48 hours.<br>No commitment at this stage — the discovery call is free.</div>
     <div class="done-coaches" id="done-coaches"></div>
   </div>
 </div>
