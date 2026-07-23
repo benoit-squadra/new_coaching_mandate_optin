@@ -1,2 +1,13 @@
 [build]
   publish = "."
+
+# Redirect old URLs to new subfolder structure
+[[redirects]]
+  from = "/proposal-ugo-serriere.html"
+  to = "/ugo-serriere/proposal.html"
+  status = 301
+
+[[redirects]]
+  from = "/contract-loraine-ugo.html"
+  to = "/ugo-serriere/contract-loraine.html"
+  status = 301
