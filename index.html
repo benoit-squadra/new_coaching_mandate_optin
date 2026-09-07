@@ -1,11 +1,10 @@
-<!-- redeploy: force Netlify forms rescan 2026-09-06 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Squadra · Mandate briefs</title>
+<title>Squadra · Mandate directory (private)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,30 +19,34 @@
     line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;
     min-height:100vh;display:flex;flex-direction:column;
   }
-  .wrap{width:100%;max-width:760px;margin:0 auto;padding:0 32px;}
+  .wrap{width:100%;max-width:820px;margin:0 auto;padding:0 32px;}
   .mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;}
 
   header{padding:56px 0 28px;}
   .brandline{display:flex;align-items:center;gap:10px;color:var(--electric);}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--electric);display:inline-block;}
 
-  .hero{padding:40px 0 44px;border-bottom:1px solid var(--ink-10);}
+  .hero{padding:40px 0 30px;border-bottom:1px solid var(--ink-10);}
   .hero .eyebrow{color:var(--electric);margin-bottom:18px;display:block;}
   h1{font-weight:200;font-size:40px;letter-spacing:-.02em;line-height:1.12;}
-  .lede{margin-top:18px;font-size:16px;color:var(--ink-80);max-width:52ch;}
+  .lede{margin-top:18px;font-size:16px;color:var(--ink-80);max-width:56ch;}
 
-  .list{padding:12px 0 8px;}
-  .brief{
-    display:flex;align-items:center;justify-content:space-between;gap:20px;
-    padding:26px 0;border-bottom:1px solid var(--ink-10);text-decoration:none;color:inherit;
-    transition:padding-left .18s ease;
+  .list{padding:8px 0;}
+  .mandate{padding:28px 0;border-bottom:1px solid var(--ink-10);}
+  .mandate-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;}
+  .mandate-name{font-size:22px;font-weight:400;letter-spacing:-.01em;}
+  .door{color:var(--ink-80);}
+  .links{display:flex;flex-wrap:wrap;gap:10px;}
+  .pill{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;
+    text-decoration:none;color:var(--ink);border:1px solid var(--ink-10);
+    border-radius:4px;padding:9px 14px;transition:border-color .15s ease,color .15s ease;
+    white-space:nowrap;
   }
-  .brief:hover{padding-left:8px;}
-  .brief:hover .go{color:var(--electric);}
-  .brief-main{display:flex;flex-direction:column;gap:6px;}
-  .brief-name{font-size:20px;font-weight:400;letter-spacing:-.01em;}
-  .brief-tag{color:var(--ink-80);}
-  .go{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-80);white-space:nowrap;transition:color .18s ease;}
+  .pill:hover{border-color:var(--electric);color:var(--electric);}
+  .pill.muted{color:var(--ink-80);opacity:.55;pointer-events:none;}
+  .pill .k{color:var(--ink-80);}
+  .pill:hover .k{color:var(--electric);}
 
   .note{margin-top:34px;padding:16px 18px;border-left:2px solid var(--electric);background:rgba(0,102,255,.04);font-size:14px;color:var(--ink-80);}
 
@@ -55,45 +58,55 @@
 <div class="wrap">
 
   <header>
-    <div class="brandline mono"><span class="dot"></span> SQUADRA · CONFIDENTIAL</div>
+    <div class="brandline mono"><span class="dot"></span> Squadra &nbsp;·&nbsp; Private &nbsp;·&nbsp; Benoit only</div>
   </header>
 
   <section class="hero">
-    <span class="eyebrow mono">Members area</span>
-    <h1>Mandate briefs.</h1>
-    <p class="lede">Private opt-in briefs for Squadra members. Each mandate lives at its own link below.</p>
+    <span class="eyebrow mono">Mandate directory</span>
+    <h1>Every mandate, in one place.</h1>
+    <p class="lede">Your working index of every brief, proposal and contract across all mandates. Internal only, not for sharing.</p>
   </section>
 
   <section class="list">
 
-    <a class="brief" href="/simon-travers/brief.html">
-      <div class="brief-main">
-        <span class="brief-name">Simon Travers</span>
-        <span class="brief-tag mono">Coaching · FullEnrich</span>
+    <div class="mandate">
+      <div class="mandate-head">
+        <span class="mandate-name">Simon Travers</span>
+        <span class="door mono">Coaching · FullEnrich</span>
       </div>
-      <span class="go">Open brief →</span>
-    </a>
+      <div class="links">
+        <a class="pill" href="/simon-travers/brief.html" target="_blank" rel="noopener"><span class="k">Brief</span> &nbsp;→</a>
+        <a class="pill" href="/simon-travers/proposal.html" target="_blank" rel="noopener"><span class="k">Proposal</span> &nbsp;→</a>
+      </div>
+    </div>
 
-    <a class="brief" href="/ugo-serriere/brief.html">
-      <div class="brief-main">
-        <span class="brief-name">Ugo Serriere</span>
-        <span class="brief-tag mono">Coaching</span>
+    <div class="mandate">
+      <div class="mandate-head">
+        <span class="mandate-name">Ugo Serriere</span>
+        <span class="door mono">Coaching</span>
       </div>
-      <span class="go">Open brief →</span>
-    </a>
+      <div class="links">
+        <a class="pill" href="/ugo-serriere/brief.html" target="_blank" rel="noopener"><span class="k">Brief</span> &nbsp;→</a>
+        <a class="pill" href="/ugo-serriere/proposal.html" target="_blank" rel="noopener"><span class="k">Proposal</span> &nbsp;→</a>
+        <a class="pill" href="/contract-loraine-ugo.html" target="_blank" rel="noopener"><span class="k">Contract</span> &nbsp;→</a>
+      </div>
+    </div>
 
-    <a class="brief" href="/qonto/brief.html">
-      <div class="brief-main">
-        <span class="brief-name">Qonto</span>
-        <span class="brief-tag mono">Fractional</span>
+    <div class="mandate">
+      <div class="mandate-head">
+        <span class="mandate-name">Qonto</span>
+        <span class="door mono">Fractional</span>
       </div>
-      <span class="go">Open brief →</span>
-    </a>
+      <div class="links">
+        <a class="pill" href="/qonto/brief.html" target="_blank" rel="noopener"><span class="k">Brief</span> &nbsp;→</a>
+        <span class="pill muted"><span class="k">Proposal</span> &nbsp;· not yet</span>
+      </div>
+    </div>
 
   </section>
 
   <div class="note">
-    These pages are private and unlisted. Please share a brief only with the members it is meant for.
+    Internal working index. Proposals and contracts are client-specific links. Add a new mandate here whenever one is deployed.
   </div>
 
   <footer>
@@ -101,5 +114,43 @@
   </footer>
 
 </div>
+<!--
+  NETLIFY FORM REGISTRATION (hidden, do not remove).
+  These register the shared form names + their fields ONCE, so new briefs and
+  proposals never need a Netlify "forms rescan" again. Every brief reuses
+  brief-optin-yes / brief-optin-no; every client match page reuses
+  client-match-response. Keep these field names in sync with the skill templates.
+-->
+<form name="brief-optin-yes" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="brief-optin-yes">
+  <input type="text" name="mandate-slug">
+  <input type="text" name="client-name">
+  <input name="bot-field">
+  <input type="text" name="member-name">
+  <input type="text" name="calendar-link">
+  <textarea name="why-fit"></textarea>
+  <textarea name="notes"></textarea>
+</form>
+
+<form name="brief-optin-no" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="brief-optin-no">
+  <input type="text" name="mandate-slug">
+  <input type="text" name="client-name">
+  <input name="bot-field">
+  <input type="text" name="member-name">
+  <textarea name="reason"></textarea>
+</form>
+
+<form name="client-match-response" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="client-match-response">
+  <input type="text" name="mandate-slug">
+  <input type="text" name="client-name">
+  <input name="bot-field">
+  <input type="text" name="selected-coaches">
+  <input type="text" name="member-name">
+  <textarea name="notes"></textarea>
+  <input type="checkbox" name="agreement">
+</form>
+
 </body>
 </html>
