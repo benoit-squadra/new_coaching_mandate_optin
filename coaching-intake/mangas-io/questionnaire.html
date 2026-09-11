@@ -49,17 +49,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;}
 .q-item textarea:focus{outline:none;border-bottom-color:var(--lime);}
 .q-item textarea::placeholder{color:rgba(255,255,255,.3);}
 
-.honeypot{display:none;}
 .submit-row{margin-top:48px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;}
 .submit-btn{background:var(--lime);color:var(--ink);border:none;padding:16px 32px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-radius:4px;cursor:pointer;transition:transform .12s;}
 .submit-btn:hover{transform:translateY(-1px);}
 .confidentiality-note{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.7;max-width:60ch;}
 .confidentiality-note .lime{color:var(--lime);}
-
-.success-msg{display:none;text-align:center;padding:64px 0;}
-.success-msg.active{display:block;}
-.success-msg h2{font-weight:200;font-size:26px;color:var(--white);margin-bottom:14px;}
-.success-msg p{font-size:15px;color:rgba(255,255,255,.7);max-width:44ch;margin:0 auto;}
 
 footer{background:var(--ink);padding:44px 0 52px;color:rgba(255,255,255,.55);border-top:1px solid rgba(255,255,255,.08);}
 footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
@@ -100,7 +94,8 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
   <div class="wrap">
     <form name="coaching-intake-mangas-io" method="POST" data-netlify="true" action="/coaching-intake/mangas-io/merci.html">
       <input type="hidden" name="form-name" value="coaching-intake-mangas-io">
-<div class="contact-row">
+
+      <div class="contact-row">
         <div class="field">
           <label for="name">Votre nom *</label>
           <input type="text" id="name" name="name" required placeholder="Prénom Nom">
@@ -128,43 +123,58 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
     </div>
 
     <div class="q-item">
-      <label for="q4"><span class="q-num">04</span>Quel est le compliment ou la reconnaissance que vous entendez le plus souvent à votre sujet ? *</label>
+      <label for="q4"><span class="q-num">04</span>Lesquels représentent le mieux votre rôle et votre expérience actuelle au sein de Mangas.io ? *</label>
       <textarea id="q4" name="q4" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
     <div class="q-item">
-      <label for="q5"><span class="q-num">05</span>Quels adjectifs vous décrivent lorsque vous opérez à votre meilleur niveau ? *</label>
+      <label for="q5"><span class="q-num">05</span>Qu&#x27;est-ce qui fonctionne bien aujourd&#x27;hui chez Mangas.io, selon vous ? *</label>
       <textarea id="q5" name="q5" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
     <div class="q-item">
-      <label for="q6"><span class="q-num">06</span>Lesquels vous décrivent quand vous êtes moins performant(e) ? *</label>
+      <label for="q6"><span class="q-num">06</span>Qu&#x27;est-ce qui, selon vous, freine le plus l&#x27;entreprise aujourd&#x27;hui ? *</label>
       <textarea id="q6" name="q6" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
     <div class="q-item">
-      <label for="q7"><span class="q-num">07</span>Lequel de vos rêves reste encore non réalisé ? *</label>
+      <label for="q7"><span class="q-num">07</span>Quel est le compliment ou la reconnaissance que vous entendez le plus souvent à votre sujet ? *</label>
       <textarea id="q7" name="q7" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
     <div class="q-item">
-      <label for="q8"><span class="q-num">08</span>Quel(s) problème(s) vous sentez-vous particulièrement bien placé(e) pour résoudre dans le monde aujourd&#x27;hui ? *</label>
+      <label for="q8"><span class="q-num">08</span>Quels adjectifs vous décrivent lorsque vous opérez à votre meilleur niveau ? *</label>
       <textarea id="q8" name="q8" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
     <div class="q-item">
-      <label for="q9"><span class="q-num">09</span>Quel serait, pour vous, le résultat d&#x27;un excellent coaching ? *</label>
+      <label for="q9"><span class="q-num">09</span>Lesquels vous décrivent quand vous êtes moins performant(e) ? *</label>
       <textarea id="q9" name="q9" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
     <div class="q-item">
-      <label for="q10"><span class="q-num">10</span>Qu&#x27;ai-je besoin de savoir sur vous pour être un bon partenaire de coaching ? *</label>
+      <label for="q10"><span class="q-num">10</span>Lequel de vos rêves reste encore non réalisé ? *</label>
       <textarea id="q10" name="q10" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
     <div class="q-item">
-      <label for="q11"><span class="q-num">11</span>Utilisez cet espace pour partager toute réflexion ou question qui pourrait m&#x27;être utile avant notre première séance. *</label>
+      <label for="q11"><span class="q-num">11</span>Quel(s) problème(s) vous sentez-vous particulièrement bien placé(e) pour résoudre dans le monde aujourd&#x27;hui ? *</label>
       <textarea id="q11" name="q11" rows="3" required placeholder="Votre réponse..."></textarea>
+    </div>
+
+    <div class="q-item">
+      <label for="q12"><span class="q-num">12</span>Quel serait, pour vous, le résultat d&#x27;un excellent coaching ? *</label>
+      <textarea id="q12" name="q12" rows="3" required placeholder="Votre réponse..."></textarea>
+    </div>
+
+    <div class="q-item">
+      <label for="q13"><span class="q-num">13</span>Qu&#x27;ai-je besoin de savoir sur vous pour être un bon partenaire de coaching ? *</label>
+      <textarea id="q13" name="q13" rows="3" required placeholder="Votre réponse..."></textarea>
+    </div>
+
+    <div class="q-item">
+      <label for="q14"><span class="q-num">14</span>Utilisez cet espace pour partager toute réflexion ou question qui pourrait m&#x27;être utile avant notre première séance. *</label>
+      <textarea id="q14" name="q14" rows="3" required placeholder="Votre réponse..."></textarea>
     </div>
 
       <div class="submit-row">
@@ -172,7 +182,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
         <div class="confidentiality-note">Tout ce que vous partagez ici reste <span class="lime">strictement confidentiel</span>.</div>
       </div>
     </form>
-</div>
+  </div>
 </section>
 
 <footer>
