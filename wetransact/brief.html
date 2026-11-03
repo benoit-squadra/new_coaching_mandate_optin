@@ -235,7 +235,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
       </div>
       <div class="term">
         <div class="term-label">Format</div>
-        <div class="term-value">One to one, in French or English</div>
+        <div class="term-value">One to one, in French or English, with reasonable async communication between sessions, which is expected</div>
       </div>
       <div class="term">
         <div class="term-label">Next step</div>
@@ -303,6 +303,11 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 
         <label for="yes-notes">Questions or comments (optional)</label>
         <textarea id="yes-notes" name="notes" placeholder="Anything you'd want Benoit to know."></textarea>
+
+        <label class="agree" style="display:flex;gap:12px;align-items:flex-start;margin-top:22px;font-size:14px;line-height:1.5;font-weight:300;text-transform:none;letter-spacing:0;cursor:pointer;">
+          <input type="checkbox" name="async-expectation" value="Agreed" required style="width:auto;margin-top:4px;flex:0 0 auto;">
+          <span>I understand that Squadra expects reasonable async communication with the client between sessions (messages, quick questions, a sounding board before a tough conversation).</span>
+        </label>
 
         <div class="panel-actions">
           <button type="submit" class="panel-submit">Send response to Benoit</button>
