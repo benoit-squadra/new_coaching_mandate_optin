@@ -277,9 +277,9 @@ nav{position:relative;overflow:hidden;}
         <span class="section-num">02 · Your specialists</span>
         <h2>Four specialists, shortlisted for L&#x27;Oréal.</h2>
       </div>
-      <div class="selection-counter"><span class="count" id="selection-count">0</span> of 3 selected</div>
+      <div class="selection-counter"><span class="count" id="selection-count">0</span> of 2 selected</div>
     </div>
-    <p class="selection-instruction">Select up to 3 specialists for a free 30-minute discovery call, with no commitment at this stage. Squadra will make the introductions within 48 hours of your submission.</p>
+    <p class="selection-instruction">Select up to 2 specialists for a free 30-minute discovery call, with no commitment at this stage. Squadra will make the introductions within 48 hours of your submission.</p>
     <div class="coaches-grid" id="coaches-grid"><div class="coach-card" data-coach-name="Gabriel Amzallag" data-coach-index="0">
       <div class="coach-selected-badge">✓ Selected</div>
       <div class="coach-head">
@@ -400,7 +400,7 @@ nav{position:relative;overflow:hidden;}
   <div class="wrap">
     <div class="response-head">
       <span class="mono">Your response</span>
-      <h2>Select up to 3 specialists for a discovery call, agree to the terms in principle, and submit.</h2>
+      <h2>Select up to 2 specialists for a discovery call, agree to the terms in principle, and submit.</h2>
       <p>Squadra will make the introductions within 48 hours.</p>
     </div>
     <form class="response-form" name="client-match-response" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="response-form" action="/geo-loreal/?sent=1#response">
@@ -411,8 +411,8 @@ nav{position:relative;overflow:hidden;}
       <p class="honeypot"><label>Don't fill this out: <input name="bot-field"></label></p>
 
       <div class="field">
-        <label>Discovery call with (select above, up to 3 specialists)</label>
-        <div class="selection-display empty" id="selection-display">No specialists selected yet. Scroll up and click a card to select up to 3.</div>
+        <label>Discovery call with (select above, up to 2 specialists)</label>
+        <div class="selection-display empty" id="selection-display">No specialists selected yet. Scroll up and click a card to select up to 2.</div>
       </div>
 
       <div class="field">
@@ -458,7 +458,7 @@ nav{position:relative;overflow:hidden;}
 
 <script>
 (function(){
-  const MAX_SELECT = 3;
+  const MAX_SELECT = 2;
   const cards = document.querySelectorAll('.coach-card');
   const counter = document.getElementById('selection-count');
   const display = document.getElementById('selection-display');
@@ -481,7 +481,7 @@ nav{position:relative;overflow:hidden;}
     counter.textContent = selected.length;
     if(selected.length === 0){
       display.classList.add('empty');
-      display.textContent = 'No specialists selected yet. Scroll up and click a card to select up to 3.';
+      display.textContent = 'No specialists selected yet. Scroll up and click a card to select up to 2.';
     } else {
       display.classList.remove('empty');
       display.textContent = selected.join(' · ');
